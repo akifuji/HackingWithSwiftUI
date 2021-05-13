@@ -31,11 +31,12 @@ struct ContentView: View {
                     Button(action: {
                         self.flagTapped(number)
                     }) {
-                        Image(self.countries[number])
-                            .renderingMode(.original)
-                            .clipShape(Capsule())
-                            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
-                            .shadow(color: .black, radius: 2)
+//                        Image(self.countries[number])
+//                            .renderingMode(.original)
+//                            .clipShape(Capsule())
+//                            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
+//                            .shadow(color: .black, radius: 2)
+                        FlagImage(image: Image(self.countries[number]))
                     }
                 }
                 Text("Current Score: \(userScore)")
@@ -63,6 +64,22 @@ struct ContentView: View {
     func askQuestion() {
         countries.shuffle()
         correntAnswer = Int.random(in: 0...2)
+    }
+}
+
+struct FlagImage: View {
+    let image: Image
+    
+    init(image: Image) {
+        self.image = image
+    }
+    
+    var body: some View {
+        self.image
+            .renderingMode(.original)
+            .clipShape(Capsule())
+            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
+            .shadow(color: .black, radius: 2)
     }
 }
 
