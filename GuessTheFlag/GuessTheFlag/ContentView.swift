@@ -13,6 +13,9 @@ struct ContentView: View {
     @State private var showingScore = false
     @State private var scoreTitle = ""
     @State private var userScore = "0"
+    @State private var spinAmount = 0.0
+    @State private var opacityAmount: CGFloat = 0.0
+    @State private var offsetAmount: CGFloat = 0.0
     
     var body: some View {
         ZStack {
@@ -37,6 +40,12 @@ struct ContentView: View {
 //                            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
 //                            .shadow(color: .black, radius: 2)
                         FlagImage(image: Image(self.countries[number]))
+                            .rotation3DEffect(
+                                .degrees(number == self.correntAnswer ? spinAmount : 0),
+                                axis: (x: 0, y: 1, z: 0)
+                            )
+                            .blur(radius: number != self.correntAnswer ? opacityAmount : 0)
+                            .offset(x: 0, y: offsetAmount)
                     }
                 }
                 Text("Current Score: \(userScore)")
@@ -47,6 +56,10 @@ struct ContentView: View {
         .alert(isPresented: $showingScore) {
             Alert(title: Text(scoreTitle), message: Text("Your score is \(userScore)"), dismissButton: .default(Text("Continue")) {
                 self.askQuestion()
+                self.opacityAmount = 0
+                withAnimation {
+                    self.offsetAmount = 0
+                }
             })
         }
     }
@@ -55,8 +68,15 @@ struct ContentView: View {
         if number == correntAnswer {
             scoreTitle = "Correct"
             userScore = String(Int(userScore)! + 10)
+            withAnimation {
+                self.spinAmount += 360
+                self.opacityAmount = 4
+            }
         } else {
             scoreTitle = "Wrong! That's the flag of \(countries[number])"
+            withAnimation {
+                self.offsetAmount = 1000
+            }
         }
         showingScore = true
     }
