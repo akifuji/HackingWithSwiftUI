@@ -33,7 +33,7 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(destination: CircleView()) {
-                        Button("Next") {}
+                        Button("Circle") {}
                     }
                 }
             }

@@ -9,8 +9,15 @@ import SwiftUI
 
 struct CircleView: View {
     var body: some View {
-        Circle()
-            .strokeBorder(Color.blue, lineWidth: 40)
+        NavigationView {
+            Circle()
+                .strokeBorder(Color.blue, lineWidth: 40)
+                .toolbar {
+                    NavigationLink(destination: FlowerView()) {
+                        Button("Flower") {}
+                    }
+                }
+        }
     }
 }
 
