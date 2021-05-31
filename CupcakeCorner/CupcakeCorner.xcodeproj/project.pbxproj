@@ -13,6 +13,7 @@
 		0CFB21522663AF64009FF059 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CFB21512663AF64009FF059 /* Preview Assets.xcassets */; };
 		0CFB215A2663B901009FF059 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFB21592663B901009FF059 /* Order.swift */; };
 		0CFB215D2663BCE9009FF059 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFB215C2663BCE9009FF059 /* AddressView.swift */; };
+		0CFB215F2664E067009FF059 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFB215E2664E067009FF059 /* CheckoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0CFB21532663AF64009FF059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CFB21592663B901009FF059 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		0CFB215C2663BCE9009FF059 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		0CFB215E2664E067009FF059 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				0CFB214A2663AF64009FF059 /* CupcakeCornerApp.swift */,
 				0CFB214C2663AF64009FF059 /* ContentView.swift */,
+				0CFB215E2664E067009FF059 /* CheckoutView.swift */,
 				0CFB215C2663BCE9009FF059 /* AddressView.swift */,
 				0CFB21592663B901009FF059 /* Order.swift */,
 				0CFB214E2663AF64009FF059 /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 			files = (
 				0CFB215A2663B901009FF059 /* Order.swift in Sources */,
 				0CFB215D2663BCE9009FF059 /* AddressView.swift in Sources */,
+				0CFB215F2664E067009FF059 /* CheckoutView.swift in Sources */,
 				0CFB214D2663AF64009FF059 /* ContentView.swift in Sources */,
 				0CFB214B2663AF64009FF059 /* CupcakeCornerApp.swift in Sources */,
 			);
