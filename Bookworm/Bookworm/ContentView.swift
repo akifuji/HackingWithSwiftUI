@@ -10,28 +10,33 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var moc
-    @FetchRequest(entity: Book.entity(), sortDescriptors: []) var books: FetchedResults<Book>
+    @FetchRequest(entity: Book.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Book.title, ascending: true), NSSortDescriptor(keyPath: \Book.author, ascending: true)]) var books: FetchedResults<Book>
     @State private var showingAddScreen = false
 
     var body: some View {
         NavigationView {
             List {
                 ForEach(books, id: \.self) { book in
-                    NavigationLink(destination: Text(book.title ?? "Unknown")) {
+                    NavigationLink(destination: DetailView(book: book)) {
                         EmojiRatingView(rating: book.rating)
                             .font(.largeTitle)
                         
                         VStack(alignment: .leading) {
                             Text(book.title ?? "Unknown Title")
                                 .font(.headline)
+                                .foregroundColor(book.rating == 1 ? Color.red : Color.black)
                             Text(book.author ?? "Unknown Author")
                                 .foregroundColor(.secondary)
                         }
                     }
                 }
+                .onDelete(perform: deleteBooks)
             }
             .navigationTitle("BookWorm")
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
+                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         showingAddScreen.toggle()
@@ -46,31 +51,12 @@ struct ContentView: View {
         }
     }
 
-    private func addItem() {
+    private func deleteBooks(at offsets: IndexSet) {
         withAnimation {
-            let newItem = Item(context: moc)
-            newItem.timestamp = Date()
-
+            offsets.map { books[$0] }.forEach(moc.delete)
             do {
                 try moc.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            //offsets.map { items[$0] }.forEach(moc.delete)
-
-            do {
-                try moc.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
