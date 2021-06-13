@@ -15,6 +15,7 @@
 		0CAE4BD326746F720055E7A4 /* MKPointAnnotation-ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAE4BD226746F720055E7A4 /* MKPointAnnotation-ObservableObject.swift */; };
 		0CAE4BD5267470240055E7A4 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAE4BD4267470240055E7A4 /* EditView.swift */; };
 		0CAE4BD7267592050055E7A4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAE4BD6267592050055E7A4 /* Result.swift */; };
+		0CAE4BD926759C0F0055E7A4 /* MKPointAnnotation-Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAE4BD826759C0F0055E7A4 /* MKPointAnnotation-Codable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0CAE4BD226746F720055E7A4 /* MKPointAnnotation-ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation-ObservableObject.swift"; sourceTree = "<group>"; };
 		0CAE4BD4267470240055E7A4 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		0CAE4BD6267592050055E7A4 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		0CAE4BD826759C0F0055E7A4 /* MKPointAnnotation-Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation-Codable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				0CAE4BD6267592050055E7A4 /* Result.swift */,
 				0CAE4BD226746F720055E7A4 /* MKPointAnnotation-ObservableObject.swift */,
 				0CAE4BD4267470240055E7A4 /* EditView.swift */,
+				0CAE4BD826759C0F0055E7A4 /* MKPointAnnotation-Codable.swift */,
 				0C61839F267384B30008D1F7 /* MapView.swift */,
 				0C6183942672BC3A0008D1F7 /* Assets.xcassets */,
 				0C6183992672BC3A0008D1F7 /* Info.plist */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CAE4BD926759C0F0055E7A4 /* MKPointAnnotation-Codable.swift in Sources */,
 				0CAE4BD7267592050055E7A4 /* Result.swift in Sources */,
 				0C6183932672BC380008D1F7 /* ContentView.swift in Sources */,
 				0CAE4BD5267470240055E7A4 /* EditView.swift in Sources */,
