@@ -15,8 +15,8 @@ struct ContentView: View {
     @State private var selectedPlace: MKPointAnnotation?
     @State private var showingPlaceDetails = false
     @State private var showingEditScreen = false
-    @State private var isUnlocked = false
-    //@State private var isUnlocked = true
+    //@State private var isUnlocked = false
+    @State private var isUnlocked = true
     @State private var showingAlert = false
     @State private var alertMessage = ""
     
